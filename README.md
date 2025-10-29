@@ -76,16 +76,19 @@ Luego abrir en el navegador: `http://localhost:8501`
 ## 📝 Ejemplos de Uso
 
 ### Por lista de productos:
+
 ```
 arroz, aceite, yerba, azúcar
 ```
 
 ### Por evento:
+
 ```
 cumpleaños para 50 personas
 ```
 
 ### Con ubicación:
+
 ```
 Guaymallén, cerca del shopping Palmares
 ```
@@ -118,15 +121,3 @@ pytest tests/
 - Precios actualizados mediante scraping (pueden variar)
 - Requiere conexión a internet
 - Sujeto a cambios en sitios web de supermercados
-
-## 🤝 Contribuir
-
-Pull requests son bienvenidos. Para cambios mayores, abrir un issue primero.
-
-## 📄 Licencia
-
-MIT
-
-## 👨‍💻 Autor
-
-Tu Nombre - [GitHub](https://github.com/tuusuario)
