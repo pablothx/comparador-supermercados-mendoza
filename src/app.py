@@ -389,6 +389,7 @@ def main():
             texto_limpio = ejemplo.split(" ", 1)[1] if " " in ejemplo else ejemplo
             if st.button(ejemplo, key=f"pill_{idx}", use_container_width=True):
                 st.session_state.input_consulta = texto_limpio
+                st.rerun()  # IMPORTANTE: Forzar rerun para actualizar el input
     
     st.markdown("---")
     
