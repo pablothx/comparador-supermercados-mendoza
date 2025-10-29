@@ -365,8 +365,8 @@ def main():
         st.markdown("🤖 **Powered by:**\n- AWS Bedrock (Claude)\n- Cantidades calculadas por IA")
     
     # Inicializar session state
-    if 'input_consulta' not in st.session_state:
-        st.session_state.input_consulta = ""
+    if 'input_text' not in st.session_state:
+        st.session_state.input_text = ""
     
     # Pills con ejemplos predeterminados
     st.markdown("#### 💡 Ejemplos rápidos:")
@@ -388,8 +388,8 @@ def main():
             # Limpiar emoji del texto
             texto_limpio = ejemplo.split(" ", 1)[1] if " " in ejemplo else ejemplo
             if st.button(ejemplo, key=f"pill_{idx}", use_container_width=True):
-                st.session_state.input_consulta = texto_limpio
-                st.rerun()  # IMPORTANTE: Forzar rerun para actualizar el input
+                st.session_state.input_text = texto_limpio
+                st.rerun()
     
     st.markdown("---")
     
@@ -397,7 +397,6 @@ def main():
     with st.form(key="search_form", clear_on_submit=False):
         consulta = st.text_input(
             "🔍 ¿Qué querés comprar?",
-            value=st.session_state.input_consulta,
             placeholder="Escribí tu consulta o usá los ejemplos de arriba ⤴️ • Presioná Enter para buscar",
             help="Podés ingresar productos específicos o un evento. Presioná Enter para buscar automáticamente.",
             key="input_text"
@@ -411,15 +410,13 @@ def main():
         with col2:
             limpiar_btn = st.form_submit_button("🔄 Limpiar", use_container_width=True)
     
-    # Actualizar session state con lo que escribió el usuario
-    st.session_state.input_consulta = consulta
-    
     # Limpiar si se presionó el botón limpiar
     if limpiar_btn:
-        st.session_state.input_consulta = ""
+        st.session_state.input_text = ""
         st.rerun()
     
     # Ejecutar búsqueda si hay texto y se presionó Enter o botón
+    consulta = st.session_state.input_text
     ejecutar = buscar_btn and consulta and consulta.strip()
     
     # Procesar búsqueda (por Enter o botón)
