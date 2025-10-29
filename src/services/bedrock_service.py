@@ -217,8 +217,7 @@ Respondé SOLO con el JSON, sin explicaciones adicionales."""
                             "content": prompt
                         }
                     ],
-                    "temperature": 0.3,
-                    "top_p": 0.9
+                    "temperature": 0.5
                 })
             )
             
@@ -282,15 +281,13 @@ NO incluyas listas de productos, solo el resumen."""
                 modelId=self.model_id,
                 body=json.dumps({
                     "anthropic_version": "bedrock-2023-05-31",
-                    "max_tokens": 512,
-                    "messages": [
+                    "max_tokens": 512, "messages": [
                         {
                             "role": "user",
                             "content": prompt
                         }
                     ],
-                    "temperature": 0.5,
-                    "top_p": 0.9
+                    "temperature": 0.5
                 })
             )
             

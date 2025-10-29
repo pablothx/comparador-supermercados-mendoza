@@ -17,7 +17,8 @@ CONFIG_DIR = BASE_DIR / "config"
 AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID", "")
 AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY", "")
 AWS_REGION = os.getenv("AWS_REGION", "us-east-1")
-BEDROCK_MODEL_ID = "anthropic.claude-3-haiku-20240307-v1:0"  # Ajustar según disponibilidad
+#BEDROCK_MODEL_ID = "anthropic.claude-3-haiku-20240307-v1:0"  # Ajustar según disponibilidad
+BEDROCK_MODEL_ID = "global.anthropic.claude-sonnet-4-5-20250929-v1:0"
 
 # Parámetros de búsqueda
 MAX_DISTANCE_KM = 10  # Radio máximo de búsqueda
